@@ -2,10 +2,12 @@ name: 'Deploy test-environment to staging'
 
 on:
   push:
-     branches:
-       - dev
-     paths-ignore:
-       - '*.md'
+    branches:
+      - dev
+      - main
+  pull_request:
+    branches:
+      - main
 jobs:
   deploy-staging:
     environment: staging
